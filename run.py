@@ -57,6 +57,11 @@ def add_event():
         if validate_data(title):
             event_details.append(title)
             break
+    while True:
+        date = input("Enter date: ")
+        if validate_date(date):
+            event_details.append(date)
+            break
     
 def validate_data(values):
     """
@@ -67,6 +72,18 @@ def validate_data(values):
             raise ValueError()
     except ValueError as e:
         print("Data is invalid, please ensure you are only using letters.\n")
+        return False
+    return True
+
+def validate_date(date):
+    """
+    Validate date to check it is in the right format dd/mm/yy
+    """
+    try:
+        if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
+            raise ValueError()
+    except ValueError as e:
+        print("Incorrect data format, should be DD-MM-YYYY.\n")
         return False
     return True
 
