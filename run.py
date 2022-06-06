@@ -1,3 +1,4 @@
+import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -29,7 +30,7 @@ def menu():
                     6. Exit
                     """)
 
-        option = input("Choose options from 1 - 6.\n")
+        option = input("Choose options from 1 - 6: ")
         if option == "1":
             add_event()
         elif option == "2":
@@ -43,5 +44,31 @@ def menu():
         elif option == "6":
             exit()
         else:
-            print("Invalid option, please select number from 1 - 6.\n")
+            print("Invalid option, please select number from 1 - 6: ")
+
+def add_event():
+    """
+    Adds new event to the excel file with the following information
+    Title, date, start time, end time, location, Description
+    """
+    event_details = {}
+    while True:
+        title = input("Enter the event title: ")
+        if validate_data(title):
+            event_details.append(title)
+            break
+ 
+    # while True:
+    #     title = input("Enter event title here.\n")
+    #     if validate_data(title):
+            
+    # print("Adding event to worksheet")
+    # event = SHEET.worksheet(events)
+    # event.append(data)
+
+    # while True:
+    #     title = input("Enter event title here.\n")
+    #     if validate_data(title):
+    #         title.append(events)
+    #         break
 menu()
