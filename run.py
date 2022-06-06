@@ -20,12 +20,28 @@ def menu():
     while True:
         print("Welcome to your Digital Planner.\n")
         print("""
-        ------Menu------
-        1. Add Event
-        2. Display All Events
-        3. Search Event
-        4. Delete Event
-        5. Reset
-        6. Exit
-       """)
+                    ------Menu------
+                    1. Add Event
+                    2. Display All Events
+                    3. Search Event
+                    4. Delete Event
+                    5. Reset
+                    6. Exit
+                    """)
+
+        option = input("Choose options from 1 - 6.\n")
+        if option == "1":
+            add_event()
+        elif option == "2":
+            display_all_events()
+        elif option == "3":
+            search_event()
+        elif option == "4":
+            delete_event()
+        elif option == "5":
+            reset()
+        elif option == "6":
+            exit()
+        else:
+            print("Invalid option, please select number from 1 - 6.\n")
 menu()
