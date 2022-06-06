@@ -1,4 +1,16 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Links and notes
+
+### Check if string contains only letters
+https://www.adamsmith.haus/python/answers/how-to-check-if-a-string-contains-only-letters-in-python
+
+### Validate date format
+https://stackoverflow.com/questions/16870663/how-do-i-validate-a-date-string-format-in-python
+
+### Validate time format
+https://datatest.readthedocs.io/en/stable/how-to/date-time-str.html
+
+### Menu in Python
+https://stackoverflow.com/questions/19964603/creating-a-menu-in-python
 
 Welcome Simi,
 
