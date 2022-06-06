@@ -51,24 +51,24 @@ def add_event():
     Adds new event to the excel file with the following information
     Title, date, start time, end time, location, Description
     """
-    event_details = {}
+    event_details = []
     while True:
         title = input("Enter the event title: ")
         if validate_data(title):
             event_details.append(title)
             break
- 
-    # while True:
-    #     title = input("Enter event title here.\n")
-    #     if validate_data(title):
-            
-    # print("Adding event to worksheet")
-    # event = SHEET.worksheet(events)
-    # event.append(data)
+    
+def validate_data(values):
+    """
+    Validate to check if string inputs contain only letters
+    """
+    try: 
+        if values.isalpha() is False:
+            raise ValueError()
+    except ValueError as e:
+        print("Data is invalid, please ensure you are only using letters.\n")
+        return False
+    return True
 
-    # while True:
-    #     title = input("Enter event title here.\n")
-    #     if validate_data(title):
-    #         title.append(events)
-    #         break
+
 menu()
