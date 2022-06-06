@@ -62,6 +62,13 @@ def add_event():
         if validate_date(date):
             event_details.append(date)
             break
+    while True:
+        start_time = input("Enter the start time: ")
+        end_time = input("Enter the end time: ")
+        if validate_time(start_time, end_time):
+            event_details.append(start_time)
+            event_details.append(end_time)
+            break
     
 def validate_data(values):
     """
@@ -84,6 +91,20 @@ def validate_date(date):
             raise ValueError()
     except ValueError as e:
         print("Incorrect data format, should be DD-MM-YYYY.\n")
+        return False
+    return True
+
+def validate_time(start_time, end_time):
+    """
+    Validate start and end time to check it is in the right format 12-hour time
+    """
+    try:
+        if datetime.datetime.strptime(start_time, '%I:%M %p') is False:
+            raise ValueError()
+        elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
+            raise ValueError()
+    except ValueError as e:
+        print("Incorrect time format, should be 12-hour time ")
         return False
     return True
 
