@@ -84,12 +84,20 @@ def validate_data(values):
     Validate to check if string inputs contain only letters
     """
     try: 
-        if values.isalpha() is False:
+        if (values == None):
             raise ValueError()
     except ValueError as e:
-        print("Data is invalid, please ensure you are only using letters.\n")
+        print("Input field required, please fill out.\n")
         return False
     return True
+
+    # try: 
+    #     if values.isalnum() is False:
+    #         raise ValueError()
+    # except ValueError as e:
+    #     print("Data is invalid, please ensure you are only using letters or numbers.\n")
+    #     return False
+    # return True
 
 def validate_date(date):
     """
@@ -98,6 +106,14 @@ def validate_date(date):
     try:
         if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
             raise ValueError()
+
+        # try:
+        #     if date < datetime.datetime.now():
+        #         raise ValueError()
+        # except ValueError as e:
+        #     print("Error: Date is earlier than current date. Input date again. \n")
+        #     return False
+
     except ValueError as e:
         print("Incorrect data format, should be DD-MM-YYYY.\n")
         return False
@@ -112,6 +128,13 @@ def validate_time(start_time, end_time):
             raise ValueError()
         elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
             raise ValueError()
+        # try:
+        #     if start_time < end_time is False:
+        #         raise ValueError()
+        # except ValueError as e:
+        #     print("Error: Start time is later than you end time. Input time again.\n")
+        #     return False
+            
     except ValueError as e:
         print("Incorrect time format, should be 12-hour time ")
         return False
