@@ -74,6 +74,10 @@ def add_event():
         if validate_data(location):
             event_details.append(location)
             break
+    while True:
+        description = input("Enter description of event: ")
+        if validate_data(description):
+            event_details.append(description)
     
 def validate_data(values):
     """
