@@ -32,13 +32,13 @@ def menu():
 
         option = input("Choose options from 1 - 6: ")
         if option == "1":
-            add_event()
+            add_events()
         elif option == "2":
             display_all_events()
         elif option == "3":
-            search_event()
+            search_events()
         elif option == "4":
-            delete_event()
+            delete_events()
         elif option == "5":
             reset()
         elif option == "6":
@@ -51,7 +51,7 @@ def add_events():
     Adds new event to the excel file with the following information
     Title, date, start time, end time, location, Description
     """
-    event_details = []
+    events_details = []
     while True:
         title = input("Enter the event title: ")
         if validate_data(title):
@@ -142,14 +142,44 @@ def validate_time(start_time, end_time):
         return False
     return True
 
+# def update_events_worksheet(add_events):
+#     """
+#     Update events worksheet, add a new row with the data list provided.
+#     """
+#     print("Updating events planner...\n")
+#     events_worksheet = SHEET.worksheet("events")
+#     events_worksheet.append_row(events_details)
+#     print("Event successfully added to planner.")
 
-def update_events_worksheet(add_events):
+def display_all_events():
     """
-    Update events worksheet, add a new row with the data list provided.
+    Function to get all the events from the Google sheet and display them in the terminal
     """
-    print("Updating events planner...\n")
-    events_worksheet = SHEET.worksheet("events")
-    events_worksheet.append_row(events)
+    all_events = EVENTS.get_all_values()
+    if all_events:
+        for events in all_events:
+            print_all_events(events)
+    else:
+        print("No events in planner")
+
+def print_all_events(existing):
+    """
+    Displays all the events 
+    """
+    event = []
+    for key, value in existing.items():
+        print(f'{key}: {value}')
+    return event
+
+
+    # all_events = EVENTS.get_all_values()
+    # if all_events:
+    #     for events in all_events:
+    #         print_all_events(events)
+    # else:
+    #     print("No events in planner")
+
+    
 
 menu()
-update_events_worksheet(add_events)
+
