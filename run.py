@@ -14,141 +14,142 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('events_planner')
 EVENTS = SHEET.worksheet('events')
 
-# def menu():
-#     """
-#     Display menu with list of options to choose from
-#     """
-#     while True:
-#         print("Welcome to your Digital Planner.\n")
-#         print("""
-#                     ------Menu------
-#                     1. Add Event
-#                     2. Display All Events
-#                     3. Search Event
-#                     4. Delete Event
-#                     5. Reset
-#                     6. Exit
-#                     """)
+def menu():
+    """
+    Display menu with list of options to choose from
+    """
+    while True:
+        print("Welcome to your Digital Planner.\n")
+        print("""
+                    ------Menu------
+                    1. Add Event
+                    2. Display All Events
+                    3. Search Event
+                    4. Delete Event
+                    5. Reset
+                    6. Exit
+                    """)
 
-#         option = input("Choose options from 1 - 6: ")
-#         if option == "1":
-#             add_event()
-#         elif option == "2":
-#             display_all_events()
-#         elif option == "3":
-#             search_event()
-#         elif option == "4":
-#             delete_event()
-#         elif option == "5":
-#             reset()
-#         elif option == "6":
-#             exit()
-#         else:
-#             print("Invalid option, please select number from 1 - 6: ")
+        option = input("Choose options from 1 - 6: ")
+        if option == "1":
+            add_event()
+        elif option == "2":
+            display_all_events()
+        elif option == "3":
+            search_event()
+        elif option == "4":
+            delete_event()
+        elif option == "5":
+            reset()
+        elif option == "6":
+            exit()
+        else:
+            print("Invalid option, please select number from 1 - 6: ")
 
-# def add_events():
-#     """
-#     Adds new event to the excel file with the following information
-#     Title, date, start time, end time, location, Description
-#     """
-#     event_details = []
-#     while True:
-#         title = input("Enter the event title: ")
-#         if validate_data(title):
-#             events_details.append(title)
-#             break
-#     while True:
-#         date = input("Enter date: ")
-#         if validate_date(date):
-#             events_details.append(date)
-#             break
-#     while True:
-#         start_time = input("Enter the start time: ")
-#         end_time = input("Enter the end time: ")
-#         if validate_time(start_time, end_time):
-#             events_details.append(start_time)
-#             events_details.append(end_time)
-#             break
-#     while True:
-#         location = input("Enter location: ")
-#         if validate_data(location):
-#             events_details.append(location)
-#             break
-#     while True:
-#         description = input("Enter description of event: ")
-#         if validate_data(description):
-#             events_details.append(description)
-#             break
+def add_events():
+    """
+    Adds new event to the excel file with the following information
+    Title, date, start time, end time, location, Description
+    """
+    event_details = []
+    while True:
+        title = input("Enter the event title: ")
+        if validate_data(title):
+            events_details.append(title)
+            break
+    while True:
+        date = input("Enter date: ")
+        if validate_date(date):
+            events_details.append(date)
+            break
+    while True:
+        start_time = input("Enter the start time: ")
+        end_time = input("Enter the end time: ")
+        if validate_time(start_time, end_time):
+            events_details.append(start_time)
+            events_details.append(end_time)
+            break
+    while True:
+        location = input("Enter location: ")
+        if validate_data(location):
+            events_details.append(location)
+            break
+    while True:
+        description = input("Enter description of event: ")
+        if validate_data(description):
+            events_details.append(description)
+            break
 
-# def validate_data(values):
-#     """
-#     Validate to check if string inputs contain only letters
-#     """
-#     try: 
-#         if (values == None):
-#             raise ValueError()
-#     except ValueError as e:
-#         print("Input field required, please fill out.\n")
-#         return False
-#     return True
 
-#     # try: 
-#     #     if values.isalnum() is False:
-#     #         raise ValueError()
-#     # except ValueError as e:
-#     #     print("Data is invalid, please ensure you are only using letters or numbers.\n")
-#     #     return False
-#     # return True
+def validate_data(values):
+    """
+    Validate to check if string inputs contain only letters
+    """
+    try: 
+        if (values == None):
+            raise ValueError()
+    except ValueError as e:
+        print("Input field required, please fill out.\n")
+        return False
+    return True
 
-# def validate_date(date):
-#     """
-#     Validate date to check it is in the right format dd/mm/yy
-#     """
-#     try:
-#         if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
-#             raise ValueError()
+    # try: 
+    #     if values.isalnum() is False:
+    #         raise ValueError()
+    # except ValueError as e:
+    #     print("Data is invalid, please ensure you are only using letters or numbers.\n")
+    #     return False
+    # return True
 
-#         # try:
-#         #     if date < datetime.datetime.now():
-#         #         raise ValueError()
-#         # except ValueError as e:
-#         #     print("Error: Date is earlier than current date. Input date again. \n")
-#         #     return False
+def validate_date(date):
+    """
+    Validate date to check it is in the right format dd/mm/yy
+    """
+    try:
+        if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
+            raise ValueError()
 
-#     except ValueError as e:
-#         print("Incorrect data format, should be DD-MM-YYYY.\n")
-#         return False
-#     return True
+        # try:
+        #     if date < datetime.datetime.now():
+        #         raise ValueError()
+        # except ValueError as e:
+        #     print("Error: Date is earlier than current date. Input date again. \n")
+        #     return False
 
-# def validate_time(start_time, end_time):
-#     """
-#     Validate start and end time to check it is in the right format 12-hour time
-#     """
-#     try:
-#         if datetime.datetime.strptime(start_time, '%I:%M %p') is False:
-#             raise ValueError()
-#         elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
-#             raise ValueError()
-#         # try:
-#         #     if start_time < end_time is False:
-#         #         raise ValueError()
-#         # except ValueError as e:
-#         #     print("Error: Start time is later than you end time. Input time again.\n")
-#         #     return False
+    except ValueError as e:
+        print("Incorrect data format, should be DD-MM-YYYY.\n")
+        return False
+    return True
+
+def validate_time(start_time, end_time):
+    """
+    Validate start and end time to check it is in the right format 12-hour time
+    """
+    try:
+        if datetime.datetime.strptime(start_time, '%I:%M %p') is False:
+            raise ValueError()
+        elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
+            raise ValueError()
+        # try:
+        #     if start_time < end_time is False:
+        #         raise ValueError()
+        # except ValueError as e:
+        #     print("Error: Start time is later than you end time. Input time again.\n")
+        #     return False
             
-#     except ValueError as e:
-#         print("Incorrect time format, should be 12-hour time ")
-#         return False
-#     return True
+    except ValueError as e:
+        print("Incorrect time format, should be 12-hour time ")
+        return False
+    return True
 
 
-# def update_events_worksheet(add_events):
-#     """
-#     Update events worksheet, add a new row with the data list provided.
-#     """
-#     print("Updating events planner...\n")
-#     events_worksheet = SHEET.worksheet("events")
-#     events_worksheet.append_row(events)
+def update_events_worksheet(add_events):
+    """
+    Update events worksheet, add a new row with the data list provided.
+    """
+    print("Updating events planner...\n")
+    events_worksheet = SHEET.worksheet("events")
+    events_worksheet.append_row(events)
 
-# menu()
-# update_events_worksheet(add_events)
+menu()
+update_events_worksheet(add_events)
