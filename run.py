@@ -69,6 +69,11 @@ def add_event():
             event_details.append(start_time)
             event_details.append(end_time)
             break
+    while True:
+        location = input("Enter location: ")
+        if validate_data(location):
+            event_details.append(location)
+            break
     
 def validate_data(values):
     """
