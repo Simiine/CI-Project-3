@@ -80,44 +80,42 @@ def menu():
 #     print(json_str)
 
 
+def add_event():
+    """
+    Adds new event to the excel file with the following information
+    Title, date, start time, end time, location, Description
+    """
+    event_details = []
+    while True:
+        title = input("Enter the event title: ")
+        if validate_data(title):
+            event_details.append(title)
+            break
+    while True:
+        date = input("Enter date: ")
+        if validate_date(date):
+            event_details.append(date)
+            break
+    while True:
+        start_time = input("Enter the start time: ")
+        end_time = input("Enter the end time: ")
+        if validate_time(start_time, end_time):
+            event_details.append(start_time)
+            event_details.append(end_time)
+            break
+    while True:
+        location = input("Enter location: ")
+        if validate_data(location):
+            event_details.append(location)
+            break
+    while True:
+        description = input("Enter description of event: ")
+        if validate_data(description):
+            event_details.append(description)
+            break
+    return update_events_worksheet(add_event)
 
-
-# def add_event():
-#     """
-#     Adds new event to the excel file with the following information
-#     Title, date, start time, end time, location, Description
-#     """
-#     event_details = []
-#     while True:
-#         title = input("Enter the event title: ")
-#         if validate_data(title):
-#             event_details.append(title)
-#             break
-#     while True:
-#         date = input("Enter date: ")
-#         if validate_date(date):
-#             event_details.append(date)
-#             break
-#     while True:
-#         start_time = input("Enter the start time: ")
-#         end_time = input("Enter the end time: ")
-#         if validate_time(start_time, end_time):
-#             event_details.append(start_time)
-#             event_details.append(end_time)
-#             break
-#     while True:
-#         location = input("Enter location: ")
-#         if validate_data(location):
-#             event_details.append(location)
-#             break
-#     while True:
-#         description = input("Enter description of event: ")
-#         if validate_data(description):
-#             event_details.append(description)
-#             break
-#     return update_events_worksheet(add_event)
-
-# json_str = json.dumps(add_event())
+json_str = json.dumps(add_event())
 
 
 def validate_data(values):
