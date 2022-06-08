@@ -133,13 +133,14 @@ def validate_time(start_time, end_time):
         return False
     return True
 
-def update_events_worksheet(event): #event_details #data
+
+def update_events_worksheet(event): 
     """
     Update events worksheet, add a new row with new event added
     """
     print("Updating Events Planner...\n")
     events_worksheet = SHEET.worksheet("events")
-    events_worksheet.append_row(event) #add_events #events_details
+    events_worksheet.append_row(event) 
     print("Events Planner updated successfully.\n")
 
 
