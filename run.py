@@ -98,14 +98,12 @@ def validate_date(date):
     try:
         if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
             raise ValueError()
-        
         try:
             if datetime.datetime.strptime(date, '%d-%m-%Y') < datetime.datetime.now():
                 raise ValueError()
         except ValueError as e:
             print("Error: Date is earlier than current date. Input date again. \n")
             return False
-
     except ValueError as e:
         print("Incorrect data format, should be DD-MM-YYYY.\n")
         return False
@@ -127,20 +125,19 @@ def validate_time(start_time, end_time):
         except ValueError as e:
             print("Error: Start time is later than you end time. Input time again.\n")
             return False
-            
     except ValueError as e:
         print("Incorrect time format, should be 12-hour time (e.g. 2:00 pm)")
         return False
     return True
 
 
-def update_events_worksheet(event): 
+def update_events_worksheet(event):
     """
     Update events worksheet, add a new row with new event added
     """
     print("Updating Events Planner...\n")
     events_worksheet = SHEET.worksheet("events")
-    events_worksheet.append_row(event) 
+    events_worksheet.append_row(event)
     print("Events Planner updated successfully.\n")
 
 
@@ -158,7 +155,7 @@ def display_all_events():
 
 def print_all_events(existing):
     """
-    Displays all the events 
+    Displays all the events
     """
     event = []
     print("-----")
@@ -187,6 +184,5 @@ def print_all_events(existing):
 
     # events_worksheet = SHEET.worksheet("events")
     # events_worksheet.delete_row(event) 
-    
     
 menu()
