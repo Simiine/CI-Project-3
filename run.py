@@ -111,6 +111,7 @@ def validate_date(date):
         return False
     return True
 
+
 def validate_time(start_time, end_time):
     """
     Validate start and end time to check it is in the right format 12-hour time
@@ -120,12 +121,12 @@ def validate_time(start_time, end_time):
             raise ValueError()
         elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
             raise ValueError()
-        # try:
-        #     if start_time < end_time is False:
-        #         raise ValueError()
-        # except ValueError as e:
-        #     print("Error: Start time is later than you end time. Input time again.\n")
-        #     return False
+        try:
+            if datetime.datetime.strptime(start_time, '%I:%M %p') > datetime.datetime.strptime(end_time, '%I:%M %p'):
+                raise ValueError()
+        except ValueError as e:
+            print("Error: Start time is later than you end time. Input time again.\n")
+            return False
             
     except ValueError as e:
         print("Incorrect time format, should be 12-hour time ")
