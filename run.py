@@ -212,9 +212,13 @@ def print_all_events(existing):
     Displays all the events 
     """
     event = []
+    print("-----")
+    print("-----")
     for key, value in existing.items():
         print(f'{key}: {value}')
     return event
+    print("-----")
+    print("-----")
 
 
     # all_events = EVENTS.get_all_values()
