@@ -36,7 +36,7 @@ def menu():
         elif option == "3":
             delete_event()
         elif option == "4":
-            exit()
+            exit();
         else:
             print("Invalid option, please select number from 1 - 6: ")
 
