@@ -144,15 +144,6 @@ def update_events_worksheet(event):
     print("Events Planner updated successfully.\n")
 
 
-# def update_events_worksheet(add_event):
-#     """
-#     Update events worksheet, add a new row with the data list provided.
-#     """
-#     print("Updating events planner...\n")
-#     events_worksheet = SHEET.worksheet("events")
-#     events_worksheet.append_row(events_details)
-#     print("Event successfully added to planner.")
-
 def display_all_events():
     """
     Function to get all the events from the Google sheet and display them in the terminal
