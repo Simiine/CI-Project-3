@@ -32,13 +32,13 @@ def menu():
 
         option = input("Choose options from 1 - 6: ")
         if option == "1":
-            add_events()
+            add_event()
         elif option == "2":
             display_all_events()
         elif option == "3":
-            search_events()
+            search_event()
         elif option == "4":
-            delete_events()
+            delete_event()
         elif option == "5":
             reset()
         elif option == "6":
@@ -46,38 +46,38 @@ def menu():
         else:
             print("Invalid option, please select number from 1 - 6: ")
 
-def add_events():
+def add_event():
     """
     Adds new event to the excel file with the following information
     Title, date, start time, end time, location, Description
     """
-    events_details = []
+    event_details = []
     while True:
         title = input("Enter the event title: ")
         if validate_data(title):
-            events_details.append(title)
+            event_details.append(title)
             break
     while True:
         date = input("Enter date: ")
         if validate_date(date):
-            events_details.append(date)
+            event_details.append(date)
             break
     while True:
         start_time = input("Enter the start time: ")
         end_time = input("Enter the end time: ")
         if validate_time(start_time, end_time):
-            events_details.append(start_time)
-            events_details.append(end_time)
+            event_details.append(start_time)
+            event_details.append(end_time)
             break
     while True:
         location = input("Enter location: ")
         if validate_data(location):
-            events_details.append(location)
+            event_details.append(location)
             break
     while True:
         description = input("Enter description of event: ")
         if validate_data(description):
-            events_details.append(description)
+            event_details.append(description)
             break
 
 
@@ -142,7 +142,7 @@ def validate_time(start_time, end_time):
         return False
     return True
 
-# def update_events_worksheet(add_events):
+# def update_events_worksheet(add_event):
 #     """
 #     Update events worksheet, add a new row with the data list provided.
 #     """
