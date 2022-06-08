@@ -24,10 +24,9 @@ def menu():
                     ------Menu------
                     1. Add Event
                     2. Display All Events
-                    3. Search Event
-                    4. Delete Event
-                    5. Reset
-                    6. Exit
+                    3. Delete Event
+                    4. Reset
+                    5. Exit
                     """)
 
         option = input("Choose options from 1 - 6: ")
@@ -36,12 +35,10 @@ def menu():
         elif option == "2":
             display_all_events()
         elif option == "3":
-            search_event()
-        elif option == "4":
             delete_event()
-        elif option == "5":
+        elif option == "4":
             reset()
-        elif option == "6":
+        elif option == "5":
             exit()
         else:
             print("Invalid option, please select number from 1 - 6: ")
