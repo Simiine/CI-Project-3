@@ -3,6 +3,9 @@
 ### Check if string contains only letters
 https://www.adamsmith.haus/python/answers/how-to-check-if-a-string-contains-only-letters-in-python
 
+### String Validation functions
+https://www.educative.io/edpresso/what-are-string-validation-functions-in-python
+
 ### Validate date format
 https://stackoverflow.com/questions/16870663/how-do-i-validate-a-date-string-format-in-python
 
