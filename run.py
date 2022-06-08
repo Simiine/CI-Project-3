@@ -129,7 +129,7 @@ def validate_time(start_time, end_time):
             return False
             
     except ValueError as e:
-        print("Incorrect time format, should be 12-hour time ")
+        print("Incorrect time format, should be 12-hour time (e.g. 2:00 pm)")
         return False
     return True
 
