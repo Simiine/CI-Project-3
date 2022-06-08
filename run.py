@@ -169,6 +169,24 @@ def print_all_events(existing):
     print("-----")
     print("-----")
 
+# def delete_event():
+#     delete_from_list = display_all_events()
+#     print(delete_from_list)
+
+#     while True:
+#         delete = input("Enter the title of the event you would like to delete. \n")
+#         if delete == (f"{title}")
+#             event_details.append(title)
+#             break
+
+    # while True:
+    #     title = input("Enter the event title: ")
+    #     if validate_data(title):
+    #         event_details.append(title)
+    #         break
+
+    # events_worksheet = SHEET.worksheet("events")
+    # events_worksheet.delete_row(event) 
+    
     
 menu()
-
