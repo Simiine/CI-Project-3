@@ -90,25 +90,6 @@ def validate_data(values):
         return False
     return True
 
-    # if len(values) == 0:
-    #     print("Empty string, please fill in.\n")
-    # return True
-
-    # try: 
-    #     if (values == None):
-    #         raise ValueError()
-    # except ValueError as e:
-    #     print("Input field required, please fill out.\n")
-    #     return False
-    # return True
-
-    # try: 
-    #     if values.isalnum() is False:
-    #         raise ValueError()
-    # except ValueError as e:
-    #     print("Data is invalid, please ensure you are only using letters or numbers.\n")
-    #     return False
-    # return True
 
 def validate_date(date):
     """
