@@ -82,13 +82,15 @@ def validate_data(values):
     """
     Validate to check if string inputs contain only letters
     """
-    try: 
-        if (values == None):
-            raise ValueError()
-    except ValueError as e:
-        print("Input field required, please fill out.\n")
-        return False
-    return True
+
+
+    # try: 
+    #     if (values == None):
+    #         raise ValueError()
+    # except ValueError as e:
+    #     print("Input field required, please fill out.\n")
+    #     return False
+    # return True
 
     # try: 
     #     if values.isalnum() is False:
