@@ -200,7 +200,7 @@ def display_all_events():
     """
     Function to get all the events from the Google sheet and display them in the terminal
     """
-    all_events = EVENTS.get_all_values()
+    all_events = EVENTS.get_all_records()
     if all_events:
         for events in all_events:
             print_all_events(events)
