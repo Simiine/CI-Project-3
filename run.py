@@ -113,7 +113,7 @@ def add_event():
         if validate_data(description):
             event_details.append(description)
             break
-    return update_events_worksheet(add_event)
+    return update_events_worksheet(event_details)
 
 
 def validate_data(values):
