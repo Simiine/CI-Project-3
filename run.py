@@ -1,6 +1,7 @@
 import datetime
 import gspread
 from google.oauth2.service_account import Credentials
+import json
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -8,11 +9,12 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
+creds = json.load(open('creds.json'))
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('events_planner')
-EVENTS = SHEET.worksheet('events')
+# EVENTS = SHEET.worksheet('events')
 
 def menu():
     """
@@ -48,34 +50,79 @@ def add_event():
     Adds new event to the excel file with the following information
     Title, date, start time, end time, location, Description
     """
-    event_details = []
+    event_details = {}
     while True:
         title = input("Enter the event title: ")
         if validate_data(title):
-            event_details.append(title)
+            event_details["Title"] = title
             break
     while True:
         date = input("Enter date: ")
         if validate_date(date):
-            event_details.append(date)
+            event_details["Date"] = date
             break
     while True:
         start_time = input("Enter the start time: ")
         end_time = input("Enter the end time: ")
         if validate_time(start_time, end_time):
-            event_details.append(start_time)
-            event_details.append(end_time)
+            event_details["Start Time"] = start_time
+            event_details["End Time"] = end_time
             break
     while True:
         location = input("Enter location: ")
         if validate_data(location):
-            event_details.append(location)
+            event_details["Location"] = location
             break
     while True:
         description = input("Enter description of event: ")
         if validate_data(description):
-            event_details.append(description)
+            event_details["Description"] = description
             break
+    while True:
+        update_events_worksheet(add_event)
+
+    json_str = json.dumps(add_event.values())
+    print(json_str)
+
+
+
+
+# def add_event():
+#     """
+#     Adds new event to the excel file with the following information
+#     Title, date, start time, end time, location, Description
+#     """
+#     event_details = []
+#     while True:
+#         title = input("Enter the event title: ")
+#         if validate_data(title):
+#             event_details.append(title)
+#             break
+#     while True:
+#         date = input("Enter date: ")
+#         if validate_date(date):
+#             event_details.append(date)
+#             break
+#     while True:
+#         start_time = input("Enter the start time: ")
+#         end_time = input("Enter the end time: ")
+#         if validate_time(start_time, end_time):
+#             event_details.append(start_time)
+#             event_details.append(end_time)
+#             break
+#     while True:
+#         location = input("Enter location: ")
+#         if validate_data(location):
+#             event_details.append(location)
+#             break
+#     while True:
+#         description = input("Enter description of event: ")
+#         if validate_data(description):
+#             event_details.append(description)
+#             break
+#     return update_events_worksheet(add_event)
+
+# json_str = json.dumps(add_event())
 
 
 def validate_data(values):
@@ -138,6 +185,16 @@ def validate_time(start_time, end_time):
         print("Incorrect time format, should be 12-hour time ")
         return False
     return True
+
+def update_events_worksheet(add_event): #event_details #data
+    """
+    Update events worksheet, add a new row with new event added
+    """
+    print("Updating Events Planner...\n")
+    events_worksheet = SHEET.worksheet("events")
+    events_worksheet.append_row(add_event) #add_events #events_details
+    print("Events Planner updated successfully.\n")
+
 
 # def update_events_worksheet(add_event):
 #     """
