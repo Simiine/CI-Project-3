@@ -155,6 +155,7 @@ def display_all_events():
     else:
         print("No events in planner")
 
+
 def print_all_events(existing):
     """
     Displays all the events 
@@ -168,15 +169,6 @@ def print_all_events(existing):
     print("-----")
     print("-----")
 
-
-    # all_events = EVENTS.get_all_values()
-    # if all_events:
-    #     for events in all_events:
-    #         print_all_events(events)
-    # else:
-    #     print("No events in planner")
-
     
-
 menu()
 
