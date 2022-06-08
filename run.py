@@ -143,7 +143,8 @@ def update_events_worksheet(event):
 
 def display_all_events():
     """
-    Function to get all the events from the Google sheet and display them in the terminal
+    Function to get all the events from the Google sheet 
+    and display them in the terminal
     """
     all_events = EVENTS.get_all_records()
     if all_events:
