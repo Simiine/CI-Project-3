@@ -25,8 +25,7 @@ def menu():
                     1. Add Event
                     2. Display All Events
                     3. Delete Event
-                    4. Reset
-                    5. Exit
+                    4. Exit
                     """)
 
         option = input("Choose options from 1 - 6: ")
@@ -37,8 +36,6 @@ def menu():
         elif option == "3":
             delete_event()
         elif option == "4":
-            reset()
-        elif option == "5":
             exit()
         else:
             print("Invalid option, please select number from 1 - 6: ")
