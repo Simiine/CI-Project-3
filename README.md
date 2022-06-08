@@ -1,4 +1,47 @@
-## Links and notes
+# Event Planner
+This programme is an Event planner that allows users to input key events they have comming up. The planner allows them to input the name of event, the date, start and end times, location and brief description. The programme also allows them the display all their inputted events to get a look of whats upcoming at a glance and delete events that they have attended. 
+
+## UX Design
+
+### User Stories
+As a user, I want:
+* The programme to be simple to use and understand
+* The programme to have clear instructions
+* A programme with a simple menu
+* A programme with good feedback on my inputs and processing my information
+* To be able to easily add my events
+* To be able to view all my events at a glance and delete events
+
+### Site Owner Goals
+As a the owner of this programme, my goals are to:
+* Create a programme that is easy to use and navigate
+* Create a programme with clear instructions for the user
+* Create a programme that can add events, 
+* Create a programme that can delete events 
+* Create a programme that can display all events
+* Create a programme that interacts with Google Sheets
+
+## Structure
+### Flowchart 
+Link - https://app.diagrams.net/ 
+
+## Features
+### Future Features
+Edit event
+Search specific event
+
+## Testing
+In Terminal
+PEP8 - http://pep8online.com/
+
+## Deployment
+I deployed this project in Heroky using the following steps:
+
+
+## Technologies Used
+* Python
+
+## Credits
 
 ### Check if string contains only letters
 https://www.adamsmith.haus/python/answers/how-to-check-if-a-string-contains-only-letters-in-python
@@ -15,32 +58,3 @@ https://datatest.readthedocs.io/en/stable/how-to/date-time-str.html
 ### Menu in Python
 https://stackoverflow.com/questions/19964603/creating-a-menu-in-python
 
-Welcome Simi,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
