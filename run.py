@@ -80,9 +80,19 @@ def add_event():
 
 def validate_data(values):
     """
-    Validate to check if string inputs contain only letters
+    Validate to check if string inputs have data
     """
+    try:
+        if len(values) == 0:
+            raise ValueError()
+    except ValueError as e:
+        print("Empty sting, please fill in. \n")
+        return False
+    return True
 
+    # if len(values) == 0:
+    #     print("Empty string, please fill in.\n")
+    # return True
 
     # try: 
     #     if (values == None):
