@@ -115,8 +115,6 @@ def add_event():
             break
     return update_events_worksheet(add_event)
 
-json_str = json.dumps(add_event())
-
 
 def validate_data(values):
     """
