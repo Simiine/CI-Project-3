@@ -2,7 +2,6 @@
 This programme is an Event planner that allows users to input key events they have comming up. The planner allows them to input the name of event, the date, start and end times, location and brief description. The programme also allows them the display all their inputted events to get a look of whats upcoming at a glance and delete events that they have attended. 
 
 ## UX Design
-
 ### User Stories
 As a user, I want:
 * The programme to be simple to use and understand
@@ -50,10 +49,22 @@ This menu option allows the user to exit from the programme, displaying the mess
 ### Future Features
 * Allow user to edit events they have already added to the database, amending their details.
 
-
 ## Testing
 In Terminal
 PEP8 - http://pep8online.com/
+
+### Bugs
+#### AttributeError: ‘dict’ object has no attribute ‘append’
+The main issue that kept occuring here was that the add event function would not run. This was because dictionaries in Python do not provide an append option. To resolve this, in order to be able to append the values as they are entered, I had to use a list instead of a dictionary, changing '{ }' to '[ ]'.
+
+#### TypeError: Object of type function is not JSON serializable
+The main issue here was that the excel sheet wouldn't update with the newly added event. This was because I was calling the wrong arguments into the functions for adding events and updating the events worksheet. To resolve this I changed the arguments within the respective functions. 
+* update_events_worksheet(event_details)
+* Def update_events_worksheet(event) 
+* events_worksheet.append_row(event)
+
+#### AttributeError: 'list' object has no attribute 'items'
+The main issue here was that the events within the database would not display, when the function was called. This was because I was using the wrong code to "get all values" instead of "get all records". To resolve this I rewrote the code to get all records.  
 
 ## Deployment
 I deployed this project in Heroky using the following steps:
@@ -63,19 +74,10 @@ I deployed this project in Heroky using the following steps:
 * Python
 
 ## Credits
+* Creating a menu - [Stack Overflow](https://stackoverflow.com/questions/19964603/creating-a-menu-in-python)
+* Validating a date string format - [Stack Overflow](https://stackoverflow.com/questions/16870663/how-do-i-validate-a-date-string-format-in-python)
+* Validating time strings - [Datatest - Read the Docs](https://datatest.readthedocs.io/en/stable/how-to/date-time-str.html)
+* Append values - [Stack Overflow](https://stackoverflow.com/questions/48234473/python-attributeerror-dict-object-has-no-attribute-append)
 
-### Check if string contains only letters
-https://www.adamsmith.haus/python/answers/how-to-check-if-a-string-contains-only-letters-in-python
-
-### String Validation functions
-https://www.educative.io/edpresso/what-are-string-validation-functions-in-python
-
-### Validate date format
-https://stackoverflow.com/questions/16870663/how-do-i-validate-a-date-string-format-in-python
-
-### Validate time format
-https://datatest.readthedocs.io/en/stable/how-to/date-time-str.html
-
-### Menu in Python
-https://stackoverflow.com/questions/19964603/creating-a-menu-in-python
-
+## Support
+* Richard Wells Code Institute Mentor.
