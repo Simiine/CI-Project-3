@@ -48,8 +48,8 @@ This menu option allows the user to exit from the programme, displaying the mess
 ![Exit picture]()
 
 ### Future Features
-Edit event
-Search specific event
+* Allow user to edit events they have already added to the database, amending their details.
+
 
 ## Testing
 In Terminal
