@@ -70,11 +70,6 @@ def add_event():
         if validate_data(location):
             event_details.append(location)
             break
-    while True:
-        description = input("Enter description of event: ")
-        if validate_data(description):
-            event_details.append(description)
-            break
     return update_events_worksheet(event_details)
 
 
@@ -123,7 +118,7 @@ def validate_time(start_time, end_time):
             if datetime.datetime.strptime(start_time, '%I:%M %p') > datetime.datetime.strptime(end_time, '%I:%M %p'):
                 raise ValueError()
         except ValueError as e:
-            print("Error: Start time is later than you end time. Input time again.\n")
+            print("Error: Start time is later than your end time. Input time again.\n")
             return False
     except ValueError as e:
         print("Incorrect time format, should be 12-hour time (e.g. 2:00 pm)")
@@ -143,7 +138,7 @@ def update_events_worksheet(event):
 
 def display_all_events():
     """
-    Function to get all the events from the Google sheet 
+    Function to get all the events from the Google sheet
     and display them in the terminal
     """
     all_events = EVENTS.get_all_records()
@@ -188,11 +183,10 @@ def print_all_events(existing):
 
 def exit_programme():
     """
-    Exit from programme 
+    Exit from programme
     """
     print("Exiting programme...\n")
     print("--------Thank you for using this programme--------")
     print("--------------------Goodbye-----------------------\n")
     exit()
-    
 menu()
