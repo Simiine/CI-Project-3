@@ -37,7 +37,7 @@ def menu():
         elif option == "3":
             delete_event()
         elif option == "4":
-            exit();
+            exit_programme()
         else:
             print("Invalid option, please select number from 1 - 4: ")
 
@@ -185,5 +185,14 @@ def print_all_events(existing):
 
     # events_worksheet = SHEET.worksheet("events")
     # events_worksheet.delete_row(event) 
+
+def exit_programme():
+    """
+    Exit from programme 
+    """
+    print("Exiting programme...\n")
+    print("--------Thank you for using this programme--------")
+    print("--------------------Goodbye-----------------------\n")
+    exit()
     
 menu()
