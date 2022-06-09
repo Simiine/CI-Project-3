@@ -29,7 +29,7 @@ def menu():
                     4. Exit
                     """)
 
-        option = input("Choose options from 1 - 6: ")
+        option = input("Choose options from 1 - 4: ")
         if option == "1":
             add_event()
         elif option == "2":
@@ -39,7 +39,7 @@ def menu():
         elif option == "4":
             exit();
         else:
-            print("Invalid option, please select number from 1 - 6: ")
+            print("Invalid option, please select number from 1 - 4: ")
 
 
 def add_event():
