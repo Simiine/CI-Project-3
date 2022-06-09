@@ -1,5 +1,6 @@
 # Event Planner
 This programme is an Event planner that allows users to input key events they have comming up. The planner allows them to input the name of event, the date, start and end times, location and brief description. The programme also allows them the display all their inputted events to get a look of whats upcoming at a glance and delete events that they have attended. 
+![responsive design picture]()
 
 ## UX Design
 ### User Stories
