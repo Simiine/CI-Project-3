@@ -43,6 +43,10 @@ This menu optin allows user to display all the events stored in the database.
 This menu options allows user to delete an event from the database byt first searching the event by title and being asked to confirm that it is the event they would like to delete, then deleting it.
 ![Delete event picture]()
 
+#### Exit
+This menu option allows the user to exit from the programme, displaying the message goodbye and thank you for using. 
+![Exit picture]()
+
 ### Future Features
 Edit event
 Search specific event
