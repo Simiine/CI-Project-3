@@ -35,6 +35,10 @@ The main menu opens up with a welcome message that says "Welcome to your Digital
 This menu optio allows user to add their event, adding the event title, date, start time, end time and location. Once they input the details and the different sections of their details are validated with the correct input data the event is added to the google spreadsheet. 
 ![Add Event picture]()
 
+#### Display All Events
+This menu optin allows user to display all the events stored in the database. 
+![Add Event picture]()
+
 ### Future Features
 Edit event
 Search specific event
