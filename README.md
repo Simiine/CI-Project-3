@@ -26,6 +26,9 @@ As a the owner of this programme, my goals are to:
 Link - https://app.diagrams.net/ 
 
 ## Features
+### Existing Features
+#### Main Menu
+The main menu opens up with a welcome message that says "Welcome to your Digital Planner". The menu gives the user 4 options to choose. They are asked to choose options from 1 - 4, inputting the number of the option they want to proceed with.
 ### Future Features
 Edit event
 Search specific event
