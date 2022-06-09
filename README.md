@@ -69,8 +69,8 @@ The main issue here was that the excel sheet wouldn't update with the newly adde
 The main issue here was that the events within the database would not display, when the function was called. This was because I was using the wrong code to "get all values" instead of "get all records". To resolve this I rewrote the code to get all records.  
 
 ## Deployment
-I deployed this project in Heroky using the following steps:
-
+I deployed this project in Heroku using the following steps:
+1. Log 
 
 ## Technologies Used
 * Python
