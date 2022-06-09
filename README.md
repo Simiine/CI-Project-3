@@ -39,6 +39,10 @@ This menu optio allows user to add their event, adding the event title, date, st
 This menu optin allows user to display all the events stored in the database. 
 ![Add Event picture]()
 
+#### Delete Event
+This menu options allows user to delete an event from the database byt first searching the event by title and being asked to confirm that it is the event they would like to delete, then deleting it.
+![Delete event picture]()
+
 ### Future Features
 Edit event
 Search specific event
