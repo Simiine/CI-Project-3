@@ -23,6 +23,7 @@ As a the owner of this programme, my goals are to:
 
 ## Structure
 ### Flowchart 
+![Flow chart picture](assets/Images/flow-chart.png)
 Link - https://app.diagrams.net/ 
 
 ## Features
