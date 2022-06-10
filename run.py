@@ -19,8 +19,8 @@ def menu():
     """
     Display menu with a list of options to choose from
     """
+    print("Welcome to your Digital Planner.\n")
     while True:
-        print("Welcome to your Digital Planner.\n")
         print("""
                     ------Menu------
                     1. Add Event
