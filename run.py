@@ -100,7 +100,7 @@ def validate_date(date):
                  date, '%d-%m-%Y') < datetime.datetime.now():
                 raise ValueError()
         except ValueError:
-            print("Error: Date is earlier than current date.\n"
+            print("Error: Date is earlier than the current date.\n"
                   "Input date again. \n")
             return False
     except ValueError:
