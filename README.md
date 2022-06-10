@@ -30,19 +30,19 @@ Link - https://app.diagrams.net/
 ### Existing Features
 #### Main Menu
 The main menu opens up with a welcome message that says "Welcome to your Digital Planner". The menu gives the user 4 options to choose from. They are asked to choose options from 1 - 4, inputting the number of the option, they want to proceed with.
-![Menu Options picture]()
+![Menu Options picture](assets/Images/menu-options.png)
 
 #### Add Event
 This menu option allows the user to add their event, adding the event title, date, start time, end time and location. Once they input the details and the different sections of their details are validated with the correct input data the event is added to the google spreadsheet. 
-![Add Event picture]()
+![Add Event picture](assets/Images/add-event.png)
 
 #### Display All Events
 This menu option allows the user to display all the events stored in the database. 
-![Display All Events picture]()
+![Display All Events picture](assets/Images/display-events.png)
 
 #### Delete Event
 This menu option allows the user to delete an event from the database by asking them to input the title of the event and then deleting the corresponding event details.
-![Delete event picture]()
+![Delete event picture](assets/Images/delete-event.png)
 
 #### Exit
 This menu option allows the user to exit from the programme, displaying a goodbye message goodbye.
