@@ -97,7 +97,8 @@ def validate_date(date):
             if datetime.datetime.strptime(date, '%d-%m-%Y') < datetime.datetime.now():
                 raise ValueError()
         except ValueError as e:
-            print("Error: Date is earlier than current date. Input date again. \n")
+            print("Error: Date is earlier than current date.\n" 
+                  "Input date again. \n")
             return False
     except ValueError as e:
         print("Incorrect data format, should be DD-MM-YYYY.\n")
@@ -161,6 +162,7 @@ def print_all_events(existing):
     return event
     print("-----")
     print("-----")
+
 
 def delete_event():
     """
