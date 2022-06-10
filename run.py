@@ -54,13 +54,13 @@ def add_event():
             event_details.append(title)
             break
     while True:
-        print("Date is recorded in DD-MM-YYYY format")
+        print("Date is recorded in DD-MM-YYYY format.")
         date = input("Enter date: ")
         if validate_date(date):
             event_details.append(date)
             break
     while True:
-        print("Time is recorded in HH:MM am format")
+        print("Time is recorded in HH:MM am format.")
         start_time = input("Enter the start time: ")
         end_time = input("Enter the end time: ")
         if validate_time(start_time, end_time):
@@ -83,7 +83,7 @@ def validate_data(values):
         if len(values) == 0:
             raise ValueError()
     except ValueError:
-        print("Empty sting, please fill in. \n")
+        print("Empty sting, please input data. \n")
         return False
     return True
 
@@ -104,7 +104,7 @@ def validate_date(date):
                   "Input date again. \n")
             return False
     except ValueError:
-        print("Incorrect data format, should be DD-MM-YYYY.\n")
+        print("Incorrect date format, should be DD-MM-YYYY.\n")
         return False
     return True
 
@@ -176,7 +176,7 @@ def delete_event():
     Delete an event from the Google sheet
     """
     while True:
-        name = input("Please enter the name of the event: ")
+        name = input("Please enter the name of the event you wish to delete: ")
         event = EVENTS.col_values(1)
         if name in event:
             rownum = event.index(name) + 1
