@@ -184,7 +184,8 @@ def delete_event():
             print("Event has been deleted. \n")
             break
         else:
-            print("Error: no event with that title. Please enter valid Title: ")
+            print("Error: no event with that title.\n"
+                  "Please enter valid title.\n")
 
 
 def exit_programme():
