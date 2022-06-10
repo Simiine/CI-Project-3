@@ -54,11 +54,13 @@ def add_event():
             event_details.append(title)
             break
     while True:
+        print("Date is recorded in DD-MM-YYYY format")
         date = input("Enter date: ")
         if validate_date(date):
             event_details.append(date)
             break
     while True:
+        print("Time is recorded in HH:MM am format")
         start_time = input("Enter the start time: ")
         end_time = input("Enter the end time: ")
         if validate_time(start_time, end_time):
@@ -94,7 +96,8 @@ def validate_date(date):
         if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
             raise ValueError()
         try:
-            if datetime.datetime.strptime(date, '%d-%m-%Y') < datetime.datetime.now():
+            if datetime.datetime.strptime(
+                 date, '%d-%m-%Y') < datetime.datetime.now():
                 raise ValueError()
         except ValueError:
             print("Error: Date is earlier than current date.\n"
@@ -116,7 +119,9 @@ def validate_time(start_time, end_time):
         elif datetime.datetime.strptime(end_time, '%I:%M %p') is False:
             raise ValueError()
         try:
-            if datetime.datetime.strptime(start_time, '%I:%M %p') > datetime.datetime.strptime(end_time, '%I:%M %p'):
+            if datetime.datetime.strptime(
+                 start_time, '%I:%M %p') > datetime.datetime.strptime(
+                      end_time, '%I:%M %p'):
                 raise ValueError()
         except ValueError:
             print("Error: Start time is later than your end time.\n"
@@ -161,9 +166,9 @@ def print_all_events(existing):
     print("-----")
     for key, value in existing.items():
         print(f'{key}: {value}')
+    print("-----")
+    print("-----")
     return event
-    print("-----")
-    print("-----")
 
 
 def delete_event():
