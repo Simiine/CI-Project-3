@@ -17,7 +17,7 @@ EVENTS = SHEET.worksheet('events')
 
 def menu():
     """
-    Display menu with list of options to choose from
+    Display menu with a list of options to choose from
     """
     while True:
         print("Welcome to your Digital Planner.\n")
@@ -44,7 +44,7 @@ def menu():
 
 def add_event():
     """
-    Adds new event to the excel file with the following information
+    Adds a new event to the excel file with the following information
     Title, date, start time, end time, location, Description
     """
     event_details = []
@@ -88,7 +88,7 @@ def validate_data(values):
 
 def validate_date(date):
     """
-    Validate date to check it is in the right format dd/mm/yy
+    Validate the date to check it is in the right format dd/mm/yy
     """
     try:
         if datetime.datetime.strptime(date, '%d-%m-%Y') is False:
@@ -131,7 +131,7 @@ def validate_time(start_time, end_time):
 
 def update_events_worksheet(event):
     """
-    Update events worksheet, add a new row with new event added
+    Update events worksheet, adding a new row with a new event added
     """
     print("Updating Events Planner...\n")
     events_worksheet = SHEET.worksheet("events")
