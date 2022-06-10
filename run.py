@@ -163,10 +163,8 @@ def print_all_events(existing):
     """
     event = []
     print("-----")
-    print("-----")
     for key, value in existing.items():
         print(f'{key}: {value}')
-    print("-----")
     print("-----")
     return event
 
