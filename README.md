@@ -88,6 +88,8 @@ The main issue here was that the excel sheet wouldn't update with the newly adde
 The main issue here was that the events within the database would not display when the function was called. This was because I was using the wrong code to "get all values" instead of "get all records". To resolve this I rewrote the code to get all records.  
 
 ## Deployment
+The live deployment can be found using the following URL - https://events-planner-p3.herokuapp.com/
+
 I deployed this project in Heroku using the following steps:
 1. Log In to Heroku
 2. From the Heroku dashboard, click on "New" and in the drop-down click "Create new app"
