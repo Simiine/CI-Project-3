@@ -95,9 +95,9 @@ I deployed this project in Heroku using the following steps:
     - Insert repository name and click "Search"
     - Click "Connect" to link up Heroku app to the GitHub repository code
 11. Scroll down and choose a deployment method 
-    - Click "Enable Automatic Deploys" 
-    - This allows Heroku to rebuild your app every time you push a new change to your code to GitHub
-12. Click "View" to go to the deployed link
+    - In manual deploy click "Deply Branch"
+    - Then click on "Enable Automatic Deploys" 
+      - This allows Heroku to rebuild your app every time you push a new change to your code to GitHub
 
 ## Technologies Used
 * Python
