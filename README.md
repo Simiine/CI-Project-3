@@ -1,6 +1,6 @@
 # Event Planner
 This programme is an Event planner that allows users to input key events they have coming up. The planner allows them to input the name of the event, the date, start and end times, location and brief description. The programme also allows them the display all their inputted events to get a look at what's upcoming at a glance and delete an event.
-![responsive design picture]()
+![responsive design picture](assets/Images/responsive-design.png)
 
 ## UX Design
 ### User Stories
@@ -46,7 +46,7 @@ This menu option allows the user to delete an event from the database by asking 
 
 #### Exit
 This menu option allows the user to exit from the programme, displaying a goodbye message goodbye.
-![Exit picture]()
+![Exit picture](assets/Images/exit-planner.png)
 
 ### Future Features
 * Allow users to edit events they have already added to the database, amending their details.
