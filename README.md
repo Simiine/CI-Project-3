@@ -70,7 +70,30 @@ The main issue here was that the events within the database would not display, w
 
 ## Deployment
 I deployed this project in Heroku using the following steps:
-1. Log 
+1. Log In to Heroku
+2. From Heroku dashboard, click on "New" and in the drop down click "Create new app"
+3. Create a unique name for the project, select your region and click "Create app"
+4. Navigate to Setting tab
+5. Scroll down to config var and click on "Reveal Config Vars"
+   - In the field for KEY enter CREDS 
+   - In the field for VALUE paste in all the content from the creds.json file. 
+   - Click "Add"
+6. Unsing the code institute template, you must add another config var
+   - In the field for KEY enter PORT
+   - In the field for VALUE enter 8000
+7. Scroll down to buildpacks and click on "Add buildpack"
+   - Select python and click "Save changes"
+   - Select nodejs and click "Save changes"
+   - Make sure python is on top and nodejs underneat
+8. Navitage to Deploy tab at the top of the page
+9. Go to deployment method and select "GitHub"
+10. Confirm you want to connect to GitHub by clicking "Connect to GitHub"
+    - Insert repository name and click "Search"
+    - Click "Connect" to link up Heroku app to GitHub repository code
+11. Scroll down and choose deployment method 
+    - Click "Enable Automatic Deploys" 
+    - This allows Heroku to rebuild your app every time you push a new change to your code to GitHub
+12. Click "View" to go to deployed link
 
 ## Technologies Used
 * Python
