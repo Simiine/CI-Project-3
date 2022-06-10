@@ -52,8 +52,7 @@ This menu option allows the user to exit from the programme, displaying a goodby
 * Allow users to edit events they have already added to the database, amending their details.
 
 ## Testing
-In Terminal
-PEP8 - http://pep8online.com/
+I passed the code through [PEP8](http://pep8online.com/)
 
 ### Bugs
 #### AttributeError: ‘dict’ object has no attribute ‘append’
