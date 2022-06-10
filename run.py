@@ -176,8 +176,11 @@ def delete_event():
     Delete an event from the Google sheet
     """
     while True:
-        name = input("Please enter the name of the event you wish to delete: ")
+        name = input("Please enter event name"
+                     "or type 'Exit' to return to main menu: ")
         event = EVENTS.col_values(1)
+        if name == "Exit":
+            menu()
         if name in event:
             rownum = event.index(name) + 1
             row = EVENTS.row_values(rownum)
