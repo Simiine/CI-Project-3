@@ -54,13 +54,13 @@ def add_event():
             event_details.append(title)
             break
     while True:
-        print("Date is recorded in DD-MM-YYYY format.")
+        print("Date is recorded in 'DD-MM-YYYY' format.")
         date = input("Enter date: ")
         if validate_date(date):
             event_details.append(date)
             break
     while True:
-        print("Time is recorded in HH:MM am format.")
+        print("Time is recorded in 'HH:MM am/pm' format.")
         start_time = input("Enter the start time: ")
         end_time = input("Enter the end time: ")
         if validate_time(start_time, end_time):
