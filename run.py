@@ -162,24 +162,27 @@ def print_all_events(existing):
     print("-----")
     print("-----")
 
-# def delete_event():
-#     delete_from_list = display_all_events()
-#     print(delete_from_list)
+def delete_event():
+    """
+    Delete an event from the Google sheet
+    """
+    while True:
+        name = input("Please enter the name of the event: ")
+        event = EVENTS.col_values(1)
+        if name in event:
+            rownum = event.index(name) + 1
+            row = EVENTS.row_values(rownum)
+            headings = EVENTS.row_values(1)
+            search = dict(zip(headings, row))
+            for key, value in search.items():
+                print(f'{key}: {value}')
+            print("Deleting event from planner...\n")
+            EVENTS.delete_rows(rownum)
+            print("Event has been deleted. \n")
+            break
+        else:
+            print("Error: no event with that title. Please enter valid Title: ")
 
-#     while True:
-#         delete = input("Enter the title of the event you would like to delete. \n")
-#         if delete == (f"{title}")
-#             event_details.append(title)
-#             break
-
-    # while True:
-    #     title = input("Enter the event title: ")
-    #     if validate_data(title):
-    #         event_details.append(title)
-    #         break
-
-    # events_worksheet = SHEET.worksheet("events")
-    # events_worksheet.delete_row(event) 
 
 def exit_programme():
     """
