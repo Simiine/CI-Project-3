@@ -38,7 +38,7 @@ This menu option allows the user to add their event, adding the event title, dat
 
 #### Display All Events
 This menu option allows the user to display all the events stored in the database. 
-![Add Event picture]()
+![Display All Events picture]()
 
 #### Delete Event
 This menu option allows the user to delete an event from the database by asking them to input the title of the event and then deleting the corresponding event details.
