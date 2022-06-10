@@ -80,7 +80,7 @@ def validate_data(values):
     try:
         if len(values) == 0:
             raise ValueError()
-    except ValueError as e:
+    except ValueError:
         print("Empty sting, please fill in. \n")
         return False
     return True
@@ -96,11 +96,11 @@ def validate_date(date):
         try:
             if datetime.datetime.strptime(date, '%d-%m-%Y') < datetime.datetime.now():
                 raise ValueError()
-        except ValueError as e:
+        except ValueError:
             print("Error: Date is earlier than current date.\n"
                   "Input date again. \n")
             return False
-    except ValueError as e:
+    except ValueError:
         print("Incorrect data format, should be DD-MM-YYYY.\n")
         return False
     return True
@@ -118,11 +118,11 @@ def validate_time(start_time, end_time):
         try:
             if datetime.datetime.strptime(start_time, '%I:%M %p') > datetime.datetime.strptime(end_time, '%I:%M %p'):
                 raise ValueError()
-        except ValueError as e:
+        except ValueError:
             print("Error: Start time is later than your end time.\n"
                   "Input start and end time again.\n")
             return False
-    except ValueError as e:
+    except ValueError:
         print("Incorrect time format.\n"
               "Should be 12-hour time (e.g. 2:00 pm) \n")
         return False
